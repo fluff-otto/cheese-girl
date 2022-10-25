@@ -16,6 +16,8 @@ public class World2 : MonoBehaviour
     public GameObject cobble;
     public GameObject heart;
     public GameObject lava;
+    public GameObject crystal;
+    public GameObject ogre;
 
     public int antal = 12;
     private int score = 0;
@@ -63,7 +65,7 @@ public class World2 : MonoBehaviour
             for (int y = -9; y <= 9; y = y + 2)
             {
                 int i = Random.Range(0, 100);
-                if (i < 45)
+                if (i < 40)
                 {
                     Instantiate(lava, new Vector2(x, y), Quaternion.identity);
                 }
@@ -71,6 +73,11 @@ public class World2 : MonoBehaviour
                 else
                 {
                     Instantiate(cobble, new Vector2(x, y), Quaternion.identity);
+                    int o = Random.Range(0, 100);
+                    if (o < 10)
+                    {
+                        Instantiate(ogre, new Vector2(x, y), Quaternion.identity);
+                    }
                 }
             }
          }
@@ -80,14 +87,20 @@ public class World2 : MonoBehaviour
             for (int y = -8; y <= 8; y = y + 2)
             {
                 int i = Random.Range(0, 100);
-                if (i < 45)
+                if (i < 40)
                 {
                     Instantiate(lava, new Vector2(x, y), Quaternion.identity);
+
                 }
                 
                 else
                 {
                     Instantiate(cobble, new Vector2(x, y), Quaternion.identity);
+                    int c = Random.Range(0, 100);
+                    if (c < 10)
+                    {
+                        Instantiate(crystal, new Vector2(x, y), Quaternion.identity);
+                    }
                 }
             }
          }
@@ -97,6 +110,11 @@ public class World2 : MonoBehaviour
             for (int y = -9; y <= 9; y = y + 2)
             {
                 Instantiate(cobble, new Vector2(x, y), Quaternion.identity);
+                int c = Random.Range(0, 100);
+                if (c < 5)
+                {
+                    Instantiate(crystal, new Vector2(x, y), Quaternion.identity);
+                }
             }
         }
      

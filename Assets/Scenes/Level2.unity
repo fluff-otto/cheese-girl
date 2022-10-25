@@ -242,6 +242,8 @@ MonoBehaviour:
   cobble: {fileID: 7297093689103934539, guid: 86e809037d0ff4c49af27ab017c5ebb0, type: 3}
   heart: {fileID: 9117286766307719045, guid: 542a418123dffa84ca12c366a7f0babb, type: 3}
   lava: {fileID: 7494705405783487153, guid: 70770321b4aaec042a7dc03131361713, type: 3}
+  crystal: {fileID: 5085368920750298130, guid: 7d1bffa97655de344b576e7d20759f93, type: 3}
+  ogre: {fileID: 5846375844856409139, guid: 452c35c0d03ef8f409f671e08b95b877, type: 3}
   antal: 12
   text: {fileID: 0}
 --- !u!4 &1917165352

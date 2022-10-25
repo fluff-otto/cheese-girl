@@ -62,11 +62,16 @@ public class Ogre : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-  
-        
 
-        
         direction = Random.Range(0, 4);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.name.StartsWith("Lava"))
+        {
+            direction = Random.Range(0, 4);
+        }
     }
 
 
