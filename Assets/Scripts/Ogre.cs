@@ -7,7 +7,7 @@ using UnityEngine;
 public class Ogre : MonoBehaviour
 {
     private Rigidbody2D rb;
-    private float speed = 5;
+    private float speed = 4;
     private int direction = 0;
     private int eatenGrass = 0;
     // Start is called before the first frame update
