@@ -64,6 +64,13 @@ public class CheeseGirl : MonoBehaviour
         if (collision.gameObject.name.StartsWith("Crystal"))
         {
             Destroy(collision.gameObject);
+            score++;
+            text.text = "Score: " + score;
+
+            if (score >= targetscore)
+            {
+                targetscore = targetscore + 12;
+            }
 
         }
 
@@ -71,18 +78,6 @@ public class CheeseGirl : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             Time.timeScale = 1;
-        }
-
-        if (collision.gameObject.name.StartsWith("Crystal"))
-        {
-            Destroy(collision.gameObject);
-            score++;
-            text.text = "Score: " + score;
-
-            if (score >= targetscore)
-            {            
-                targetscore = targetscore + 12;
-            }
         }
     }
 

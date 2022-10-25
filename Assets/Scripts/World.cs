@@ -58,13 +58,48 @@ public class World : MonoBehaviour
 
    
         }
+        // lista med koordinater med ogres
+        List<Vector3> ogre_position = new List<Vector3>();
+
+        ogre.GetComponent<SpriteRenderer>().sortingOrder = 2;
+        for (int i = 0; i < antal; ++i)
+        {
+            int x = Random.Range(-21, 21);
+            int y = Random.Range(-9, 9);
+
+            Instantiate(crystal, new Vector2(x, y), Quaternion.identity);
+
+
+            Instantiate(ogre, new Vector3(x + 1, y, 0), Quaternion.identity);
+            // lägg till koordinat i lista
+            ogre_position.Add(new Vector3(x + 1, y, 0));
+
+        }
 
         for (int x = -21; x <= 21; x++)
         {
             for (int y = -9; y <= 9; y++)
             {
+                // om koordinat finns i lista => lägg INTE till
+                bool ogreOnPosition = false;
+                foreach (Vector3 position in ogre_position)
+                {
+                    if (position.x == x && position.y == y)
+                    {
+                        // finns ogre => inget gräs
+                        ogreOnPosition = true;
+                    }
+                }
 
-                Instantiate(grass, new Vector2(x, y), Quaternion.identity);
+                if (ogreOnPosition)
+                {
+                    // inget gräs
+                }
+                else
+                {
+                    Instantiate(grass, new Vector2(x, y), Quaternion.identity);
+                }
+                
 
             }
 
@@ -73,18 +108,7 @@ public class World : MonoBehaviour
 
         
 
-        ogre.GetComponent<SpriteRenderer>().sortingOrder = 2;
-        for (int i = 0; i < antal; ++i)
-        {
-            int x = Random.Range(-21, 21);
-            int y = Random.Range(-9, 9);
-            
-            Instantiate(crystal, new Vector2(x, y) , Quaternion.identity);
-            
-
-            Instantiate(ogre, new Vector3(x+1, y, 0), Quaternion.identity);
-            
-        }
+      
  
     }
 
