@@ -70,8 +70,9 @@ public class World : MonoBehaviour
             Instantiate(crystal, new Vector2(x, y), Quaternion.identity);
 
 
-            Instantiate(ogre, new Vector3(x + 1, y, 0), Quaternion.identity);
+            Instantiate(ogre, new Vector3(x + 2, y, 0), Quaternion.identity);
             // lägg till koordinat i lista
+            ogre_position.Add(new Vector3(x + 2, y, 0));
             ogre_position.Add(new Vector3(x + 1, y, 0));
 
         }

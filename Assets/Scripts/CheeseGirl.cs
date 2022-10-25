@@ -15,6 +15,8 @@ public class CheeseGirl : MonoBehaviour
     public TMP_Text text;
     public int score = 0;
     public int targetscore = 12;
+    private int direction = 0;
+    
 
    
     
@@ -27,40 +29,49 @@ public class CheeseGirl : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+        
         if (Input.GetKey(KeyCode.W))
         {
             // up
 
             rb.position = new Vector2((float)Math.Round(rb.position.x), rb.position.y+speed * Time.deltaTime);
+            direction = 1;
+            SnapToGrid();
         }
         
         else if (Input.GetKey(KeyCode.S))
         {
             rb.position = new Vector2((float)Math.Round(rb.position.x), rb.position.y-speed * Time.deltaTime);
+            direction = 3;
+            SnapToGrid();
         }
 
         else if (Input.GetKey(KeyCode.D))
         {
             rb.position = new Vector2(rb.position.x+speed * Time.deltaTime, (float)Math.Round(rb.position.y));
+            direction = 0;
+            SnapToGrid();
         }
 
         else if (Input.GetKey(KeyCode.A))
         {
             rb.position = new Vector2(rb.position.x-speed * Time.deltaTime, (float)Math.Round(rb.position.y));
+            direction = 2;
+            SnapToGrid();
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-       
+
         if (collision.gameObject.name.StartsWith("Grass"))
         {
             Destroy(collision.gameObject);
-            
+
         }
-        
+
         if (collision.gameObject.name.StartsWith("Crystal"))
         {
             Destroy(collision.gameObject);
@@ -74,11 +85,35 @@ public class CheeseGirl : MonoBehaviour
 
         }
 
-        if (collision.gameObject.name.StartsWith("Ogre"))
+        if (!collision.gameObject.name.StartsWith("Ogre"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-            Time.timeScale = 1;
+            return;
         }
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Time.timeScale = 1;
+    }
+
+    private void SnapToGrid()
+    {
+        if (direction == 0 || direction == 2)
+        {
+            SnapToGridY();
+        }
+        else
+        {
+            SnapToGridX();
+        }
+
+    }
+    private void SnapToGridX()
+    {
+        rb.position = new Vector2((float)System.Math.Round(rb.position.x), rb.position.y);
+    }
+
+    private void SnapToGridY()
+    {
+        rb.position = new Vector2(rb.position.x, (float)System.Math.Round(rb.position.y));
+
     }
 
 }

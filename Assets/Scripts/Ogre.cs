@@ -62,8 +62,9 @@ public class Ogre : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
+  
         
-            
+
         
         direction = Random.Range(0, 4);
     }
