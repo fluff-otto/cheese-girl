@@ -55,22 +55,51 @@ public class World2 : MonoBehaviour
 
             }
         }
-         for (int x = -20; x <= 20; x = x +2)
-        {
-            for (int y = -9; x <= 9; y = y + 2)
+
+
+         for (int x = -20; x <= 20; x = x + 2)
+         {
+            
+            for (int y = -9; y <= 9; y = y + 2)
             {
                 int i = Random.Range(0, 100);
-                if (i < 30)
+                if (i < 45)
                 {
                     Instantiate(lava, new Vector2(x, y), Quaternion.identity);
                 }
                 
                 else
                 {
-                    Instantiate(cobble, new Vector2(-x, y), Quaternion.identity);
+                    Instantiate(cobble, new Vector2(x, y), Quaternion.identity);
                 }
             }
+         }
+
+         for (int x = -21; x <= 21; x = x + 2)
+         {
+            for (int y = -8; y <= 8; y = y + 2)
+            {
+                int i = Random.Range(0, 100);
+                if (i < 45)
+                {
+                    Instantiate(lava, new Vector2(x, y), Quaternion.identity);
+                }
+                
+                else
+                {
+                    Instantiate(cobble, new Vector2(x, y), Quaternion.identity);
+                }
+            }
+         }
+
+         for (int x = -21; x <= 21; x = x +2)
+        {
+            for (int y = -9; y <= 9; y = y + 2)
+            {
+                Instantiate(cobble, new Vector2(x, y), Quaternion.identity);
+            }
         }
+     
     }
 
     // Update is called once per frame
