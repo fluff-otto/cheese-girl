@@ -79,7 +79,7 @@ public class World2 : MonoBehaviour
                     {
                         Instantiate(ogre, new Vector2(x, y), Quaternion.identity);
                     }
-                    else if (o > 98)
+                    else if (o > 96)
                     {                       
                         Instantiate(chestRed, new Vector2(x, y), Quaternion.identity);
                     }

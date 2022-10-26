@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5242118454839902858}
   - component: {fileID: 4070950883658971438}
   - component: {fileID: -1559028557798138066}
+  - component: {fileID: -4242285909753429058}
   m_Layer: 0
   m_Name: ChestRed
   m_TagString: Untagged
@@ -109,5 +110,18 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.75, y: 0.75}
+  m_Size: {x: 1.5, y: 1.5}
   m_EdgeRadius: 0
+--- !u!114 &-4242285909753429058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 727381527946425455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04db5d2fe15e4b34f8653b4258318300, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  block: 0

@@ -142,6 +142,10 @@ PrefabInstance:
       propertyPath: closeDoor
       value: 
       objectReference: {fileID: 21300000, guid: 2d27842172aba6147929d4f57f0e25ca, type: 3}
+    - target: {fileID: 7255921295273508313, guid: b9eed979a87b15f45bc17b3cae7bc0e9, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7255921295273508314, guid: b9eed979a87b15f45bc17b3cae7bc0e9, type: 3}
       propertyPath: m_RootOrder
       value: 3
