@@ -18,6 +18,7 @@ public class World2 : MonoBehaviour
     public GameObject lava;
     public GameObject crystal;
     public GameObject ogre;
+    public GameObject chestRed;
 
     public int antal = 12;
     private int score = 0;
@@ -78,6 +79,12 @@ public class World2 : MonoBehaviour
                     {
                         Instantiate(ogre, new Vector2(x, y), Quaternion.identity);
                     }
+                    else if (o > 98)
+                    {                       
+                        Instantiate(chestRed, new Vector2(x, y), Quaternion.identity);
+                    }
+
+                    
                 }
             }
          }

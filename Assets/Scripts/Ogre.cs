@@ -45,7 +45,8 @@ public class Ogre : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
 
-        int deltaDirection = Random.Range(1, 3);
+        int deltaDirection = Random.Range(0, 2);
+        deltaDirection *= 2;
         direction += deltaDirection;
         direction = direction % 4;
         //SnapToGrid();
@@ -72,7 +73,8 @@ public class Ogre : MonoBehaviour
         if (collision.gameObject.name.StartsWith("Lava"))
         {
             Debug.Log("trigger lava");
-            int deltaDirection = Random.Range(1, 3);
+            int deltaDirection = Random.Range(0, 2);
+            deltaDirection *= 2;
             direction += deltaDirection;
             direction = direction % 4;
             if (direction == 1 || direction == 3)
@@ -85,14 +87,13 @@ public class Ogre : MonoBehaviour
             }
         }
     }
-
+    
     private void OnTriggerStay2D(Collider2D collision)
     {
-        Debug.Log("trigger");
         if (collision.gameObject.name.StartsWith("Lava"))
         {
-            Debug.Log("trigger lava");
-            int deltaDirection = Random.Range(1, 3);
+            int deltaDirection = Random.Range(0, 2);
+            deltaDirection *= 2;
             direction += deltaDirection;
             direction = direction % 4;
             if (direction == 1 || direction == 3)

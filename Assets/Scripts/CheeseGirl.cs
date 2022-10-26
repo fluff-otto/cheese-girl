@@ -67,6 +67,11 @@ public class CheeseGirl : MonoBehaviour
             direction = 2;
             SnapToGrid();
         }
+
+        else if (Input.GetKey(KeyCode.R))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -122,4 +127,23 @@ public class CheeseGirl : MonoBehaviour
 
     }
 
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        
+        if (collision.gameObject.name.StartsWith("Lava"))
+        {
+            
+            int deltaDirection = UnityEngine.Random.Range(1, 3);
+            direction += deltaDirection;
+            direction = direction % 4;
+            if (direction == 1 || direction == 3)
+            {
+                SnapToGridY();
+            }
+            else
+            {
+                SnapToGridX();
+            }
+        }
+    }
 }
