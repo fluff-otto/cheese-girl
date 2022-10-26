@@ -48,7 +48,7 @@ public class Ogre : MonoBehaviour
         int deltaDirection = Random.Range(1, 3);
         direction += deltaDirection;
         direction = direction % 4;
-        SnapToGrid();
+        //SnapToGrid();
 
         if (direction == 0 || direction == 2)
         {
@@ -68,9 +68,41 @@ public class Ogre : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("trigger");
         if (collision.gameObject.name.StartsWith("Lava"))
         {
-            direction = Random.Range(0, 4);
+            Debug.Log("trigger lava");
+            int deltaDirection = Random.Range(1, 3);
+            direction += deltaDirection;
+            direction = direction % 4;
+            if (direction == 1 || direction == 3)
+            {
+                SnapToGridY();
+            }
+            else
+            {
+                SnapToGridX();
+            }
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        Debug.Log("trigger");
+        if (collision.gameObject.name.StartsWith("Lava"))
+        {
+            Debug.Log("trigger lava");
+            int deltaDirection = Random.Range(1, 3);
+            direction += deltaDirection;
+            direction = direction % 4;
+            if (direction == 1 || direction == 3)
+            {
+                SnapToGridY();
+            }
+            else
+            {
+                SnapToGridX();
+            }
         }
     }
 
