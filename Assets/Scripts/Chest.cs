@@ -34,9 +34,7 @@ public class Chest : MonoBehaviour
     {
         if (collision.gameObject.name.StartsWith("Player")) 
         {
-            chest = true;
-
-            
+            chest = true;           
         }
         
     }
@@ -45,8 +43,6 @@ public class Chest : MonoBehaviour
         if (collision.gameObject.name.StartsWith("Player"))
         {
             chest = false;
-
-
         }
         
     }

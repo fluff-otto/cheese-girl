@@ -52,13 +52,10 @@ public class Door : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Door Collision");
         if (collision.gameObject.name.StartsWith("Player"))
         {
-            Debug.Log("Collision player");
             if (isOpen)
             {
-                Debug.Log("byt scen");
                 SceneManager.LoadScene("Level2");
             }
 

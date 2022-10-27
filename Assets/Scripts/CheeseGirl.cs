@@ -16,6 +16,7 @@ public class CheeseGirl : MonoBehaviour
     public int score = 0;
     public int targetscore = 12;
     private int direction = 0;
+    public bool isPaused = false;
     
 
    
@@ -72,6 +73,21 @@ public class CheeseGirl : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+
+        else if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isPaused == true)
+            {
+                Time.timeScale = 1;
+                isPaused = false;
+            }
+            else if (isPaused == false)
+            {
+                Time.timeScale = 0;
+                isPaused = true;
+            }
+                
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -100,7 +116,7 @@ public class CheeseGirl : MonoBehaviour
         {
             return;
         }
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(3);
         Time.timeScale = 1;
     }
 

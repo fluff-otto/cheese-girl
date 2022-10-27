@@ -25,6 +25,8 @@ public class World2 : MonoBehaviour
     private int targetscore = 12;
     public TMP_Text text;
 
+    public bool boolPortal = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -109,6 +111,14 @@ public class World2 : MonoBehaviour
                         Instantiate(crystal, new Vector2(x, y), Quaternion.identity);
                     }
                 }
+
+                if (boolPortal)
+                {
+                    if (i < 2)
+                    {
+                        Instantiate(portal, new Vector2(x, y), Quaternion.identity);
+                    }
+                }
             }
          }
 
@@ -124,6 +134,7 @@ public class World2 : MonoBehaviour
                 }
             }
         }
+
      
     }
 
