@@ -90,6 +90,22 @@ public class CheeseGirl : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.name.StartsWith("Crystal"))
+        {
+            Destroy(collision.gameObject);
+            score++;
+            text.text = "Score: " + score;
+
+            if (score >= targetscore)
+            {
+                targetscore = targetscore + 12;
+            }
+
+        }
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
 

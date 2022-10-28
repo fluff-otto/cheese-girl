@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &674139448376843096
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 674139448376843102}
+  - component: {fileID: 674139448376843103}
+  m_Layer: 0
+  m_Name: world
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &674139448376843102
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674139448376843096}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.2517586, y: 0.6640509, z: -8.52706}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &674139448376843103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674139448376843096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cc4ad5f7f8030740bf666efbabf466d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  darkWall: {fileID: 1662880795005369191, guid: 290101a7bf230834fbb3adbe8880223c, type: 3}
+  entrance: {fileID: 0}
+  portal: {fileID: 9085152265752235407, guid: d56f508262e7b2f42986f193706dd938, type: 3}
+  cobble: {fileID: 7297093689103934539, guid: 86e809037d0ff4c49af27ab017c5ebb0, type: 3}
+  heart: {fileID: 9117286766307719045, guid: 542a418123dffa84ca12c366a7f0babb, type: 3}
+  lava: {fileID: 7494705405783487153, guid: 70770321b4aaec042a7dc03131361713, type: 3}
+  crystal: {fileID: 5085368920750298130, guid: 7d1bffa97655de344b576e7d20759f93, type: 3}
+  ogre: {fileID: 5846375844856409139, guid: 452c35c0d03ef8f409f671e08b95b877, type: 3}
+  chestRed: {fileID: 727381527946425455, guid: c8dd870aadb6cfe45aa4ccdb4ac2c2e6, type: 3}
+  antal: 12
+  text: {fileID: 0}
+  boolPortal: 1

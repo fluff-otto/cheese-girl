@@ -26,6 +26,8 @@ public class World2 : MonoBehaviour
     public TMP_Text text;
 
     public bool boolPortal = false;
+    List<Vector2> cobbleCoordinates = new List<Vector2>();
+
 
 
     // Start is called before the first frame update
@@ -76,6 +78,7 @@ public class World2 : MonoBehaviour
                 else
                 {
                     Instantiate(cobble, new Vector2(x, y), Quaternion.identity);
+                    cobbleCoordinates.Add(new Vector2(x, y));
                     int o = Random.Range(0, 100);
                     if (o < 10)
                     {
@@ -105,10 +108,12 @@ public class World2 : MonoBehaviour
                 else
                 {
                     Instantiate(cobble, new Vector2(x, y), Quaternion.identity);
+                    cobbleCoordinates.Add(new Vector2(x, y));
                     int c = Random.Range(0, 100);
                     if (c < 10)
                     {
-                        Instantiate(crystal, new Vector2(x, y), Quaternion.identity);
+                        GameObject theCrystal = Instantiate(crystal, new Vector2(x, y), Quaternion.identity);
+                        theCrystal.GetComponent<BoxCollider2D>().isTrigger = true;
                     }
                 }
 
@@ -122,21 +127,29 @@ public class World2 : MonoBehaviour
             }
          }
 
-         for (int x = -21; x <= 21; x = x +2)
+         for (int x = -21; x <= 21; x = x + 2)
         {
             for (int y = -9; y <= 9; y = y + 2)
             {
                 Instantiate(cobble, new Vector2(x, y), Quaternion.identity);
+                cobbleCoordinates.Add(new Vector2(x, y));
                 int c = Random.Range(0, 100);
                 if (c < 5)
                 {
-                    Instantiate(crystal, new Vector2(x, y), Quaternion.identity);
+                    GameObject theCrystal = Instantiate(crystal, new Vector2(x, y), Quaternion.identity);
+                    theCrystal.GetComponent<BoxCollider2D>().isTrigger = true;
                 }
             }
         }
 
      
     }
+
+    public Vector2 RandomCobble()
+    {
+        return cobbleCoordinates[Random.Range(0, cobbleCoordinates.Count)];
+    }
+
 
     // Update is called once per frame
     void Update()

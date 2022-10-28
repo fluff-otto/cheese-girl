@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class Portal : MonoBehaviour
 {
+    private World2 world2Object;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameObject[] world = GameObject.FindGameObjectsWithTag("World");
+        world2Object = world[0].GetComponent<World2>();
+        Debug.Log("world object " + world2Object);
     }
 
     // Update is called once per frame
@@ -18,7 +22,8 @@ public class Portal : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        collision.gameObject.transform.position = new Vector3(Random.Range(0, 22), Random.Range(0, 10), 0);
+        Vector2 coordinate = world2Object.RandomCobble();
+        collision.gameObject.transform.position = coordinate;
         
     }
 }
