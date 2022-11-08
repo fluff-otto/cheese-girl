@@ -627,6 +627,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Entrance
       objectReference: {fileID: 0}
+    - target: {fileID: 763598244120832703, guid: 7a6d53ebdcd024e4a9490d8b133ab13b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a6d53ebdcd024e4a9490d8b133ab13b, type: 3}
 --- !u!1 &1091185240 stripped

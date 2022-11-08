@@ -69,6 +69,42 @@ public class CheeseGirl : MonoBehaviour
             SnapToGrid();
         }
 
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
+            // up
+
+            rb.position = new Vector2((float)Math.Round(rb.position.x), rb.position.y + speed * Time.deltaTime);
+            direction = 1;
+            SnapToGrid();
+        }
+
+        else if (Input.GetKey(KeyCode.DownArrow))
+        {
+            // down
+
+            rb.position = new Vector2((float)Math.Round(rb.position.x), rb.position.y - speed * Time.deltaTime);
+            direction = 3;
+            SnapToGrid();
+        }
+
+        else if (Input.GetKey(KeyCode.RightArrow))
+        {
+            // right
+
+            rb.position = new Vector2(rb.position.x + speed * Time.deltaTime, (float)Math.Round(rb.position.y));
+            direction = 0;
+            SnapToGrid();
+        }
+
+        else if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            // left
+
+            rb.position = new Vector2(rb.position.x - speed * Time.deltaTime, (float)Math.Round(rb.position.y));
+            direction = 2;
+            SnapToGrid();
+        }
+
         else if (Input.GetKey(KeyCode.R))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);

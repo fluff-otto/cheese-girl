@@ -27,12 +27,15 @@ public class World2 : MonoBehaviour
 
     public bool boolPortal = false;
     List<Vector2> cobbleCoordinates = new List<Vector2>();
-
+    
 
 
     // Start is called before the first frame update
     void Start()
     {
+        float yMax = Camera.main.orthographicSize;
+        float xMax = yMax * Camera.main.aspect;
+
         targetscore = 12;
 
         for (int x = -22; x <= 22; x++)
@@ -154,6 +157,6 @@ public class World2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

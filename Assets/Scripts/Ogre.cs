@@ -69,10 +69,10 @@ public class Ogre : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("trigger");
+        
         if (collision.gameObject.name.StartsWith("Lava"))
         {
-            Debug.Log("trigger lava");
+            
             int deltaDirection = Random.Range(0, 2);
             deltaDirection *= 2;
             direction += deltaDirection;
